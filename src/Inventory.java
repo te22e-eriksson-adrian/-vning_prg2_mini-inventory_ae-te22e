@@ -5,6 +5,15 @@ public class Inventory {
 
     //Methods
     public void Display(){
-        //jj
+        System.out.println("Backpack is currently containing:");
+        for(Item item : Items){
+            System.out.println(" - "+item);
+        }
     }
+    public void add(Item item) {
+        Items.add(item);
+    }
+    /* public void remove(Item item){
+        Items.remove(item);
+    } */
 }

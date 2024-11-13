@@ -1,10 +1,15 @@
-public class Weapon {
-    public int minDamage;
-    public int maxDamage;
+import java.util.Random;
+
+public class Weapon extends Item{
+    public int minDamage = 10;
+    public int maxDamage = 20; // (+1)
+    
+    Random gen = new Random();
 
     //Methods
     public int Attack(){
-        int value = 0;  //Temporary to avoid unnecessary fault warnings. :)
-        return value;
+        Random generator = new Random();
+        int random = generator.nextInt(minDamage, maxDamage + 1);
+        return random;
     }
 }
