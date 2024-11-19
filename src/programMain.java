@@ -2,20 +2,20 @@ import java.util.Scanner;
 
 public class ProgramMain {
     Scanner keyboard = new Scanner(System.in);
+    Character player = new Character();
 
     public ProgramMain(){ 
-        Character player = new Character();
         System.out.println();
         System.out.print("What is the name of your Character?: ");
         player.name = keyboard.nextLine();
 
         System.out.println();
         createItemsData();
-        player.backpack.Display(); //?
+        player.backpack.Display();
 
         System.out.println();
         System.out.println("Look, here is a new helmet! Would you like to store it in your inventory?");
-        System.out.println("If so, then please answer '2', if not, then please answer '1'.");
+        System.out.println("If so, then please answer '1', if not, then please answer '2'.");
         System.out.print("Choice: ");
         int choice = keyboard.nextInt();
         keyboard.nextLine();
@@ -28,7 +28,6 @@ public class ProgramMain {
                 helmet.protection = 15;
 
                 player.backpack.add(helmet);
-                createItemsData();
                 System.out.println();
                 System.out.println("The helmet was added to your backpack.");
                 break;
@@ -42,6 +41,9 @@ public class ProgramMain {
                 System.out.println("Wrong input! Please, restart the program and choose between the numbers 1 and 2 next time.");
                 break;
         }
+
+        player.backpack.Display();
+
         keyboard.close();
     }
     public void createItemsData(){
@@ -54,5 +56,8 @@ public class ProgramMain {
         healingPotion.name = "Healing Potion";
         healingPotion.weight = 2;
         healingPotion.UsesCurrent = 0;
+
+        player.backpack.add(knife);
+        player.backpack.add(healingPotion);
     }
 }

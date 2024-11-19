@@ -7,7 +7,7 @@ public class Inventory {
     public void Display(){
         System.out.println("Backpack is currently containing:");
         for(Item item : Items){
-            System.out.println(" - "+item);
+            System.out.println(" - "+item.name);
         }
     }
     public void add(Item item) {
